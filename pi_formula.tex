@@ -39,14 +39,21 @@
 
 \begin{document}
 \begin{description}[labelindent=0pt,labelsep=10pt]
-\item[$A$] attenuation of the RF power in \si{\decibel}
-\item[$G$] gain $G = 10^{\frac{A}{20}}$ 
-\item[$\Zin$] desired input impedance
-\item[$\Zout$] desired output impedance
+\item[$att_P$] attenuation of the RF power in \si{\decibel}
+\item[$att_A$] attenuation of the RF amplitude in \si{\decibel}
+\item[$L$] loss $L = 10^{\frac{att_P}{10}}$ or $L = 10^{\frac{att_A}{20}}$ 
+\item[$A$] $= (L+1)/(L-1)$
+\item[$\Zin$] desired input impedance in \si{\ohm}
+\item[$\Zout$] desired output impedance in \si{\ohm}
 \end{description}
 
-\[R_1 = \frac{1}{\frac{G+1}{\Zin \cdot (G-1)} - \frac{1}{R_2}}\]
-\[R_2 = \frac{G-1}{2}  \cdot \sqrt{\frac{\Zin \cdot \Zout}{G}}\]
-\[R_3 = \frac{1}{\frac{G+1}{\Zout \cdot (G-1)} - \frac{1}{R_2}}\]
+\paragraph{Pi attenuator}
+\[R_2 = \frac{L - 1}{2} \cdot \sqrt{\frac{\Zin \cdot \Zout}{L}} \]
+\[R_1 = \frac{1}{ \frac{A}{\Zin} -  \frac{1}{R_2}}\]
+\[R_3 = \frac{1}{ \frac{A}{\Zout} -  \frac{1}{R_2}}\]
+
+%\[R_1 = \frac{1}{\frac{G+1}{\Zin \cdot (G-1)} - \frac{1}{R_2}}\]
+%\[R_2 = \frac{G-1}{2}  \cdot \sqrt{\frac{\Zin \cdot \Zout}{G}}\]
+%\[R_3 = \frac{1}{\frac{G+1}{\Zout \cdot (G-1)} - \frac{1}{R_2}}\]
 
 \end{document}
