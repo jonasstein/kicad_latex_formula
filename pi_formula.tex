@@ -41,15 +41,22 @@
 \begin{description}[labelindent=0pt,labelsep=10pt]
 \item[$\Zin$] desired input impedance in \si{\ohm}
 \item[$\Zout$] desired output impedance in \si{\ohm}
-\item[$a$] attenuation of the RF power or amplitude in \si{\decibel}
-\item[$L$] loss $L = 10^{\frac{a}{10}}$ 
+\item[$a$] attenuation in \si{\decibel}
+\item[$L$] $= 10^{\frac{a}{10}}$ (the loss)
 \item[$A$] $= (L+1)/(L-1)$
 \end{description}
 
 \paragraph{Pi attenuator}
-\[R_2 = \frac{L - 1}{2} \cdot \sqrt{\frac{\Zin \cdot \Zout}{L}} \]
-\[R_1 = \frac{1}{ \frac{A}{\Zin} -  \frac{1}{R_2}}\]
-\[R_3 = \frac{1}{ \frac{A}{\Zout} -  \frac{1}{R_2}}\]
+
+\[R2 = \frac{L - 1}{2} \cdot \sqrt{\frac{\Zin \cdot \Zout}{L}} \]
+\[R1 = \frac{1}{ \frac{A}{\Zin} -  \frac{1}{R2}}\]
+\[R3 = \frac{1}{ \frac{A}{\Zout} -  \frac{1}{R2}}\]
+
+
+% subscript numbers
+%\[R_2 = \frac{L - 1}{2} \cdot \sqrt{\frac{\Zin \cdot \Zout}{L}} \]
+%\[R_1 = \frac{1}{ \frac{A}{\Zin} -  \frac{1}{R_2}}\]
+%\[R_3 = \frac{1}{ \frac{A}{\Zout} -  \frac{1}{R_2}}\]
 
 %\[R_1 = \frac{1}{\frac{G+1}{\Zin \cdot (G-1)} - \frac{1}{R_2}}\]
 %\[R_2 = \frac{G-1}{2}  \cdot \sqrt{\frac{\Zin \cdot \Zout}{G}}\]
