@@ -1,0 +1,52 @@
+\documentclass[varwidth,convert={density=300,size=800x800,outext=.png}]{standalone}
+
+%/*
+% * This program source code file is part of KiCad, a free EDA CAD application.
+% *
+% * Copyright (C) 2015 Jonas Stein news@jonasstein.de
+% * Copyright (C) 2015 KiCad Developers, see CHANGELOG.TXT for contributors.
+% *
+% * This program is free software; you can redistribute it and/or
+% * modify it under the terms of the GNU General Public License
+% * as published by the Free Software Foundation; either version 3
+% * of the License, or (at your option) any later version.
+% *
+% * This program is distributed in the hope that it will be useful,
+% * but WITHOUT ANY WARRANTY; without even the implied warranty of
+% * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% * GNU General Public License for more details.
+% *
+% * You should have received a copy of the GNU General Public License
+% * along with this program; if not, you may find one here:
+% * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+% * or you may search the http://www.gnu.org website for the version 2 license,
+% * or you may write to the Free Software Foundation, Inc.,
+% * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+% */
+%
+% create .png file with
+% pdflatex -shell-escape pi_formula.tex
+
+
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\newcommand{\Zin}{Z_\mathrm{in}}
+\newcommand{\Zout}{Z_\mathrm{out}}
+
+\begin{document}
+\begin{description}[labelindent=0pt,labelsep=10pt]
+\item[$\Zin$] desired input impedance in \si{\ohm}
+\item[$\Zout$] desired output impedance $\Zin=\Zout$
+\item[$a$] attenuation in \si{\decibel}
+\item[$L$] $= 10^{\frac{a}{20}}$ (the loss)
+\end{description}
+
+\paragraph{Bridged tee attenuator}
+\[R1 = \Zin \cdot (L - 1)\]
+\[R2 = \frac{\Zin}{L - 1}\]
+
+\end{document}
