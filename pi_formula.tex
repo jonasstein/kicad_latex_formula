@@ -1,4 +1,11 @@
 \documentclass[varwidth,convert={density=300,size=800x800,outext=.png}]{standalone}
+
+% create .png file with
+% pdflatex -shell-escape pi_formula.tex
+% Author: Jonas Stein news@jonasstein.de
+% License: GPL-3 (ask author if other license needed)
+
+
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{siunitx}
@@ -16,14 +23,8 @@
 \item[$\Zout$] desired output impedance
 \end{description}
 
-
-
 \[R_1 = \frac{1}{\frac{G+1}{\Zin \cdot (G-1)} - \frac{1}{R_2}}\]
 \[R_2 = \frac{G-1}{2}  \cdot \sqrt{\frac{\Zin \cdot \Zout}{G}}\]
 \[R_3 = \frac{1}{\frac{G+1}{\Zout \cdot (G-1)} - \frac{1}{R_2}}\]
 
-%\begin{tikzpicture}
-%\draw (0,0) node{ %$\displaystyle{ %
-%
-%\end{tikzpicture}
 \end{document}
